@@ -2,18 +2,22 @@ import React from 'react';
 import {FaTemperatureHigh, FaTemperatureLow, FaWind} from 'react-icons/fa';
 import {TbTemperature} from 'react-icons/tb';
 import {FiSunset, FiSun, FiDroplet} from 'react-icons/fi';
+import { iconUrlFromCode } from '../weather/weatherInfo';
 
-const Temp = () => {
+const Temp = ({weather: {
+    details, icon, temp, temp_max, temp_min, sunrise, sunset, speed, humidity, feels_like, timezone
+
+}}) => {
   return (
     <div>
         <div className='items-center py-6 flex justify-center text-xl text-cyan-200'>
-            <p>Cloudy or whatever</p>
+            <p>{details}</p>
         </div>
         
         <div className="items-center justify-between flex flex-row text-white py-3">
-            <img src='http://openweathermap.org/img/wn/01d@2x.png' alt='' className='w-20' 
+            <img src={iconUrlFromCode(icon)} alt='' className='w-20' 
             />
-            <p className='text text-5xl'>84°F</p>
+            <p className='text text-5xl'>{`${temp.toFixed()}°`}</p>
             <div className='flex flex-col space-y-2'>
                 <div className='font-light text-sm items-center flex justify-center'>
                     <TbTemperature className='mr-1' size={20} />
