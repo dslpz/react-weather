@@ -1,15 +1,19 @@
-import React, {useState} from 'react'
-import {FaLocationArrow, FaSearch} from "react-icons/fa"
+import React, {useState} from 'react';
+import {FaLocationArrow, FaSearch} from "react-icons/fa";
 
 
 
-function SearchBar({ setQuery }) {
-
+function SearchBar ({ setQuery, units, setUnits }) {
   const [city, setCity] = useState("");
 
+  const handleUnitsChange = (e) => {
+    const selectedUnit = e.currentTarget.name;
+    if (units !== selectedUnit) setUnits(selectedUnit);
+  };
+
   const handleSearchClick = () => {
-    if (city !== '') setQuery({q: city})
-  }
+    if (city !== "") setQuery({ q: city });
+  };
   
   const handleLocationClick = () => {
     if (navigator.geolocation) {
@@ -33,24 +37,33 @@ function SearchBar({ setQuery }) {
             value={city}
             onChange={(e) => setCity(e.currentTarget.value)}
             type='text' 
-            className='text-xl font-light focus:outline-none p-2 w-full shadow-xl capitalize placeholder:lowercase' 
+            className='rounded-xl text-xl font-light focus:outline-none p-2 w-full shadow-xl capitalize placeholder:lowercase' 
             placeholder='Search City'
             />
-        
-        <FaSearch 
-        size={30} 
-        className='text-white transition ease-out hover:scale-125'
-        onClick={handleSearchClick}/>
-        <FaLocationArrow
-        size={30} 
-        className='text-white transition ease-out hover:scale-125'
-        onClick={handleLocationClick}/>
-        </div>
+            <FaSearch 
+            size={30} 
+            className='text-purple-900 transition ease-out hover:scale-125'
+            onClick={handleSearchClick}/>
+            <FaLocationArrow
+            size={30} 
+            className='text-purple-900 transition ease-out hover:scale-125'
+            onClick={handleLocationClick}/>
+            </div>
 
-        <div className='flex flex-row w-1/4 items-center justify-center'>
-            <button className='font-light text-xl text-white hover:scale-125 transition ease-out' name='imperial'>°F </button>
-            <p className='mx-2 text-white text-xl'> |</p>
-            <button className='font-light text-xl text-white hover:scale-125 transition ease-out' name='metric'>°C </button>
+            <div className='flex flex-row w-1/4 items-center justify-center'>
+            <button 
+            className='text-purple-900 font-light text-xl text- hover:scale-125 transition ease-out' 
+            name='imperial'
+            onClick={handleUnitsChange}
+            >
+              °F </button>
+            <p className='mx-2 text-purple-900 text-xl'> |</p>
+            <button 
+            className='font-light text-xl text-purple-900 hover:scale-125 transition ease-out' 
+            name='metric'
+            onClick={handleUnitsChange}
+            >
+              °C </button>
         </div>
     </div>
   )

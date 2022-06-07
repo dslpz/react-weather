@@ -10,7 +10,7 @@ const Temp = ({weather: {
 }}) => {
   return (
     <div>
-        <div className='items-center py-6 flex justify-center text-xl text-cyan-200'>
+        <div className='items-center py-6 flex justify-center text-xl text-purple-900'>
             <p>{details}</p>
         </div>
         
@@ -37,7 +37,7 @@ const Temp = ({weather: {
             </div>
         </div>
 
-    <div className='justify-center space-x-2 text-white text-sm py-3 flex flex-row items-center'>
+    <div className='justify-center space-x-2 text-purple-900 text-sm py-3 flex flex-row items-center'>
         <FiSun />
         <p className='font-light'>
             Sunrise:<span className='ml-1 font-medium'>{formatToLocalTime(sunrise, timezone, "hh:mm a")}</span>

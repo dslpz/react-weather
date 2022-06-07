@@ -9,9 +9,8 @@ const Location = ({weather: {dt, timezone, name, country}}) => {
                     {formatToLocalTime(dt, timezone)}
             </p>
         </div>
-
         <div className='my-3 items-center flex justify-center'>
-            <p className='text-white text-3xl font-medium'>{`${name}, ${country}`}</p>
+            <p className='text-orange-500 text-3xl font-medium'>{`${name}, ${country}`}</p>
         </div>
     </div>
   )

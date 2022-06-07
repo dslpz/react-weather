@@ -5,7 +5,7 @@ import Location from './components/Location';
 import Temp from './components/Temp';
 import getFormattedWeatherData from './weather/weatherInfo';
 import { useEffect, useState } from 'react';
-// import QuickSearch from './components/QuickSearch';
+
 
 
 function App() {
@@ -26,23 +26,17 @@ useEffect(() => {
 }, [query, units]);
   
   return (
-    <div className="mx-auto max-w-screen-md bg-gradient-to-br from-cyan-900 to-cyan-200 h-fit shadow-xl shadow-gray-600 mt-4 py-5 px-32">
-      {/* <QuickSearch  setQuery={setQuery}/> */}
+    <div className="mx-auto max-w-screen-md rounded-3xl bg-gradient-to-br from-purple-900 to-purple-200 h-fit shadow-xl shadow-black mt-4 py-5 px-32">
       <SearchBar setQuery units setUnits />
-
       {weather && (
-        <div>
+      <div>
       <Location weather={weather} />
       <Temp weather={weather} />
 
       <Forecast title='hourly forecast' items={weather.hourly}/>
       <Forecast title='five day forecast' items={weather.daily}/>
-
-        </div>
-
-      )}
-
-      
+      </div>
+      )} 
     </div>
   );
 }

@@ -10,8 +10,7 @@ const Forecast = ({title, items}) => {
           {title}</p>
       </div>
       <hr className='my-2' />
-
-      <div className='text-white items-center flex flex-row justify-between'>
+      <div className='text-purple-900 items-center flex flex-row justify-between'>
         {items.map(item => (
            <div className='flex flex-col items-center justify-center'>
            <p className='font-light text-sm'>{item.title}</p>
