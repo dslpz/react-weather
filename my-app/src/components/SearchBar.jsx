@@ -3,7 +3,7 @@ import {FaLocationArrow, FaSearch} from "react-icons/fa"
 
 
 
-const Inputs = () => {
+const SearchBar = () => {
   return (
     <div className="flex flex-row justify-center my-6">
         <div className='flex flex-row w-3/4 items-center justify-center space-x-4'>
@@ -24,4 +24,4 @@ const Inputs = () => {
   )
 }
 
-export default Inputs
+export default SearchBar
