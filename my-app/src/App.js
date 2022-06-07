@@ -1,5 +1,5 @@
 import './App.css';
-// import { FaBeer } from 'react-icons/fa';
+import Forecast from './components/Forecast';
 import Inputs from './components/Inputs';
 import Location from './components/Location';
 import Temp from './components/Temp';
@@ -13,6 +13,9 @@ function App() {
       
       <Location />
       <Temp />
+
+      <Forecast title='hourly forecast'/>
+      <Forecast title='five day forecast' />
     </div>
   );
 }
