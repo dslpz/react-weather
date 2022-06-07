@@ -13,12 +13,12 @@ const Temp = () => {
         <div className="items-center justify-between flex flex-row text-white py-3">
             <img src='http://openweathermap.org/img/wn/01d@2x.png' alt='' className='w-20' 
             />
-            <p className='text text-5xl'>84°</p>
+            <p className='text text-5xl'>84°F</p>
             <div className='flex flex-col space-y-2'>
                 <div className='font-light text-sm items-center flex justify-center'>
                     <TbTemperature className='mr-1' size={20} />
                         Feels like:
-                        <span className='font-medium ml-1'>90°</span>
+                        <span className='font-medium ml-1'>90°F</span>
                 </div>
                 <div className='font-light text-sm items-center flex justify-center'>
                     <FiDroplet className='mr-1' size={20} />

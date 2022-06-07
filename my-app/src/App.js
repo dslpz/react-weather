@@ -3,9 +3,17 @@ import Forecast from './components/Forecast';
 import SearchBar from './components/SearchBar';
 import Location from './components/Location';
 import Temp from './components/Temp';
+import getFormattedWeatherData from './weather/weatherInfo';
 
 
 function App() {
+  const fetchWeather = async () => {
+    const data = await getFormattedWeatherData({q: 'london'});
+    console.log(data);
+  };
+
+  fetchWeather();
+  
   return (
     <div className="mx-auto max-w-screen-md bg-gradient-to-br from-cyan-900 to-cyan-200 h-fit shadow-xl shadow-gray-600 mt-4 py-5 px-32">
       <SearchBar />
