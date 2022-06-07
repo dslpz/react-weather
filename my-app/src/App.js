@@ -2,6 +2,7 @@ import './App.css';
 // import { FaBeer } from 'react-icons/fa';
 import Inputs from './components/Inputs';
 import Location from './components/Location';
+import Temp from './components/Temp';
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
 
       
       <Location />
+      <Temp />
     </div>
   );
 }
